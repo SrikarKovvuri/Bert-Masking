@@ -1,8 +1,3 @@
-"""
-BERT Masked Language Modeling Inference
-
-This script demonstrates how to use a pretrained BERT model to predict masked tokens.
-"""
 
 import torch
 import random
@@ -50,7 +45,7 @@ def mask_random_tokens(sentences, tokenizer, num_masks_per_sentence=1):
         valid_positions = list(range(0, len(input_ids)))
 
         ############################################################
-        # STUDENT IMPLEMENTATION START
+
         # 1. randomly sample num_masks_per_sentence token indices to mask
         # 2. replace the tokens at the masked positions with tokenizer.mask_token_id/mask_token
         # 3. decode the tokenized+masked input_ids back to text (keep [MASK] tokens visible)
@@ -120,7 +115,6 @@ def predict_masked_tokens(masked_data, model, tokenizer, top_k=5):
         for data in tqdm(masked_data, desc="Predicting masked tokens"):
             masked_sentence = data["masked_sentence"]
             ############################################################
-            # STUDENT IMPLEMENTATION START
             # 1. tokenize the masked sentence
             # 2. make a forward pass using BERT (refer to https://huggingface.co/docs/transformers/en/model_doc/bert#transformers.BertForPreTraining to understand the model output)
             # 3. get model's top-k prediction for each masked position
@@ -164,10 +158,6 @@ def predict_masked_tokens(masked_data, model, tokenizer, top_k=5):
 
             
             
-
-            ############################################################
-            # STUDENT IMPLEMENTATION END
-            ############################################################
 
             predictions.append({
                 "original": data["original"],

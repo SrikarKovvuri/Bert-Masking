@@ -1,13 +1,13 @@
 """
-Sanity check script for BERT masked language modeling assignment.
-This script tests basic functionality of the three main functions.
+Sanity check script for BERT masked language modeling.
+ tests basic functionality of the three main functions.
 """
 
 import torch
 from transformers import BertTokenizer, BertForPreTraining
 from bert_inference import mask_random_tokens, predict_masked_tokens, compute_accuracy
 
-# MODEL_NAME_OR_PATH = "prajjwal1/bert-tiny"
+
 MODEL_NAME_OR_PATH = "google-bert/bert-base-uncased"
 
 
